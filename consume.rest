@@ -7,3 +7,35 @@ GET http://localhost:3002/login
 
 ###
 POST http://localhost:3002
+
+### But the below will work because we've defined the endpoint /register
+
+POST http://localhost:3002/register
+Content-Type: application/json
+
+{
+    "username": "charleskasasira01@gmail.com",
+    "password": "passwd"
+}
+
+
+### DELETE Request
+DELETE http://localhost:3002/users/13
+
+
+### PUT Request
+PUT http://localhost:3002/users 
+Content-Type: application/json
+
+[
+    {
+        "id": 15,
+        "username": "Charles Kasasira",
+        "password": "1234"
+    }, 
+    {
+        "id": 16,
+        "username": "Derrick Kasasira",
+        "password": "passwd"
+    }
+]

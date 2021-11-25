@@ -10,7 +10,9 @@
   "author": "Charles Kasasira",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
     "nodemon": "^2.0.15"
   }
 }
