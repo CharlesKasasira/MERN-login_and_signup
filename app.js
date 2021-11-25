@@ -38,6 +38,31 @@ app.put('/users', (req, res) => {
     res.send("Updated User")
 })
 
+app.patch('/users/:id', (req, res) => {
+    const { id } = req.params
+
+    let user = {
+        "id": 12,
+        "username": "Charles",
+        "password": "1234",
+        "email": "charleskasasira01@gmail.com"
+    }
+
+    console.log('Old user', user)
+
+    const { username } = req.body
+    
+
+    if(user.id == id) {
+        user.username = username
+        res.json({
+            "message": "updated successfully",
+            "updated user": user
+        })
+    }
+
+})
+
 
 
 app.listen(PORT, ()=> console.log(`Api working on http://localhost:${PORT}`));

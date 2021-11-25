@@ -22,6 +22,9 @@ Content-Type: application/json
 ### DELETE Request
 DELETE http://localhost:3002/users/13
 
+### DELETE Request multiple
+DELETE http://localhost:3002/localhost:3002/users/[12, 14, 16]
+
 
 ### PUT Request
 PUT http://localhost:3002/users 
@@ -39,3 +42,12 @@ Content-Type: application/json
         "password": "passwd"
     }
 ]
+
+
+### PATCH Request
+PATCH http://localhost:3002/users/12
+Content-Type: application/json
+
+{
+    "username": "Kasasira"
+}
