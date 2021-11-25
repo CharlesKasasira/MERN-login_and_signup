@@ -1,0 +1,16 @@
+{
+  "name": "quiz-app",
+  "version": "1.0.0",
+  "description": "The backend for the quiz app",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest",
+    "dev": "nodemon app.js"
+  },
+  "author": "Charles Kasasira",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.15"
+  }
+}
