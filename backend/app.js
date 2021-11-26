@@ -1,6 +1,14 @@
+require('dotenv').config()
 const express = require('express')
 const app = express()
+const mongoose = require('mongoose')
 const PORT = 3002
+
+
+try{
+    mongoose.connect(process.env.MONGODB_URL, { useNewUrlParser: true})
+} catch(error) { console.log(error)}
+
 
 
 
@@ -65,4 +73,4 @@ app.patch('/users/:id', (req, res) => {
 
 
 
-app.listen(PORT, ()=> console.log(`Api working on http://localhost:${PORT}`));
+app.listen(PORT, ()=> console.log(`API working on http://localhost:${PORT}`));
