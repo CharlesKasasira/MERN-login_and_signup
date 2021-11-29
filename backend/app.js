@@ -3,6 +3,7 @@ const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
 const PORT = 3002
+const User = require('./models/user')
 
 
 try{
@@ -15,22 +16,64 @@ try{
 // Middleware
 app.use(express.json())
 
-app.get('/', (req, res) => res.send('Hello world!'))
-
-app.get('/login', (req, res) => {
+app.get('/', async (req, res) => {
+    const user = await User.find()
     res.json({
-        'result': 'success',
-        'message': 'Login successful'
+        user
     })
 })
 
-app.post('/register', (req, res) => {
 
-    console.log(req.body)
-    res.json({
-        'result': 'successful',
-        'message': 'Register successful'
+app.get('/users/username/:username', async (req, res) => {
+    const user = await User.getUser(req.params.username)
+    if(user){
+        return res.json({
+            'result': 'success',
+            'user-details': user
+        })
+    }
+    return res.json({
+        'result': 'failed',
+        'message': 'Login Failed'
     })
+})
+
+
+app.post('/login', (req, res) => {
+    
+})
+
+app.post('/register', async (req, res) => {
+
+    const { username, password } = req.body
+
+    const user = await new User({ username, password })
+
+    user.save() 
+    try{
+
+        if(user){
+            return res.json({
+                "result": "successful",
+                "message": "New User Registered",
+                "user-details": user
+            })
+        }
+
+        return res.json({
+            "result": "failed",
+            "message": "Registration failed"
+        })
+        
+    } catch(error){
+            if(error.E11000){
+                res.json({
+                    "error": "user exists"
+                })
+            }      
+    }
+
+    
 })
 
 
