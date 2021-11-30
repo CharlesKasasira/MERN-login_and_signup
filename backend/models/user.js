@@ -68,8 +68,19 @@ userSchema.statics.getUsersByTerm = async(term = null) => {
         return users
     }
 
-    users = await User.find()
+    users = await User.find({phone: term})
+    if(users?.length  > 0){
+        users.map(user => ({
+            id: user._id,
+            createdAt: user.createdAt,
+            username: user.username
+        }))
+        return users;
+    }
+
+    return null
 }
+
 
 
 
