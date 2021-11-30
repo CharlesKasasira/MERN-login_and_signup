@@ -1,14 +1,21 @@
 require('dotenv').config()
 const express = require('express')
 const app = express()
+const dbConnect = require('./config/db')
+const routerUser = require('./routes/user')
 const mongoose = require('mongoose')
-const PORT = 3002
+
+const PORT = process.env.PORT || 3002
 const User = require('./models/user')
 
 
+// try{
+//     mongoose.connect(process.env.MONGODB_URL, { useNewUrlParser: true})
+// } catch(error) { console.log(error)}
+
 try{
-    mongoose.connect(process.env.MONGODB_URL, { useNewUrlParser: true})
-} catch(error) { console.log(error)}
+    dbConnect()
+} catch (error){ console.log(error) }
 
 
 
