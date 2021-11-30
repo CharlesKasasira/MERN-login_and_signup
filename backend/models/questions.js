@@ -4,6 +4,10 @@ const questionSchema = mongoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now
+    },
+    question: {
+        type: String,
+        required: true
     }
 })
 
