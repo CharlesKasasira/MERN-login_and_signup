@@ -14,6 +14,30 @@ const questionSchema = mongoose.Schema({
     },
     category: {
         type: String
+    },
+    author: {
+        type: String
+    },
+    score: {
+        type: Number
+    },
+    platform: {
+        type: String
+    },
+    answer: {
+        
+    },
+    choice: {
+
+    },
+    timeLimit: {
+        
+    },
+    expiresAt: {
+        type: String
+    },
+    required: {
+
     }
 })
 
