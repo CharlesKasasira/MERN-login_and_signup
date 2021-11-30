@@ -8,6 +8,12 @@ const questionSchema = mongoose.Schema({
     question: {
         type: String,
         required: true
+    },
+    type: {
+        type: Array
+    },
+    category: {
+        type: String
     }
 })
 
