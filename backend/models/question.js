@@ -31,13 +31,13 @@ const questionSchema = mongoose.Schema({
 
     },
     timeLimit: {
-        
+        type: Number
     },
     expiresAt: {
         type: String
     },
     required: {
-
+        type: Boolean
     },
     response: {
         type: Object
