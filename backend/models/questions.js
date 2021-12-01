@@ -25,7 +25,7 @@ const questionSchema = mongoose.Schema({
         type: String
     },
     answer: {
-        
+        type: Object
     },
     choice: {
 
