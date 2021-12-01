@@ -5,6 +5,9 @@ const questionSchema = mongoose.Schema({
         type: Date,
         default: Date.now
     },
+    test: {
+
+    },
     question: {
         type: String,
         required: true
