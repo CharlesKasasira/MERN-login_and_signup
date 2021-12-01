@@ -38,6 +38,9 @@ const questionSchema = mongoose.Schema({
     },
     required: {
 
+    },
+    response: {
+        type: Object
     }
 })
 
