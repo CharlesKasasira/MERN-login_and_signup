@@ -5,8 +5,30 @@ const responseSchema = mongoose.Schema({
         type: Date,
         default: Date.now 
     },
-    questions_id: {
+    question_id: {
         type: String,
         required: true 
+    },
+    student_id: {
+        type: String,
+        required: true 
+    },
+    status: {
+        type: String
+    },
+    duration: {
+
+    },
+    score: {
+        type: String
+    },
+    review: {
+        type: String
+    },
+    remarks: {
+        type: String
+    },
+    rating: {
+        
     }
 })
