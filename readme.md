@@ -1,4 +1,4 @@
-# Quiz App using the MERN stack
+# Login and SignUp using the MERN stack
 
 - MongoDB
 - Express
